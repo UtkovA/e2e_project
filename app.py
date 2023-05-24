@@ -2,7 +2,7 @@ from flask import Flask, request
 import joblib
 import numpy
 
-MODEL_PATH = 'mlmodels/model_Sanya.pkl.pkl'
+MODEL_PATH = 'mlmodels/model_Sanya.pkl'
 SCALER_X_PATH = 'mlmodels/ss_x.pkl'
 SCALER_Y_PATH = 'mlmodels/ss_y.pkl'
 
