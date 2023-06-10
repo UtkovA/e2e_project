@@ -123,7 +123,7 @@ docker images  # Show all Docker images
 docker run --network host -d utkova/e2e_test:v.0.1 #Names and versions are different for each user
 ```
 18. To check the connetction using Postman\
-19.To push Docker image to DockerHub
+19. To push Docker image to DockerHub
 ```
 docker push utkova/e2e_test:v.0.1 #Names and versions are different for each user
 ```
