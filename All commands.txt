@@ -1,0 +1,172 @@
+lsof -i:5000
+kill - 9 <PID>
+
+git config --local user.name utkov_student
+git config --local user.email st110964@gsom.spbu.ru
+
+ssh sanya_u@158.160.28.59
+ls
+cd flaskproject_sanya
+git init
+git status
+touch .gitignore
+ls -a
+vim .gitignore
+-------
+1. Esc
+2. i
+.idea/
+3. Esc
+4. Shift + ж
+5. wq
+-------
+ls -a
+cat .gitignore
+git status
+git config --list
+git add --a
+git status
+git commit -m "Initial commit"
+git status
+git remote add origin https://github.com/UtkovA/e2e_project.git
+git branch -M main
+git push -u origin main
+git branch
+git branch mlmodels_feature
+git branch
+git checkout mlmodels_feature
+git branch
+git status
+---------
+Donwlodad pkl files manually
+Write the code an app.py and save
+Upload to virtual machine
+-------------
+git status
+git add --a
+git commit -m"Folder mlmodels, modified app.py"
+git status
+git branch
+git checkout main
+git branch'git merge mlmodels_feature
+git status
+git push
+#sudo apt install ufw
+sudo ufw allow 5444
+python3 app.py
+
+DOCKER
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo docker run hello-world #test
+docker version
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+docker version
+docker run hello-world
+docker ps
+docker ps-a
+docker rm <name>
+cd flask_class100
+git status
+sudo apt install python3.8-venv
+python3 -m venv env
+ls
+git status
+vim .gitignore
+-------
+1. Esc
+2. i
+env/
+3. Esc
+4. Shift + ж
+5. wq
+-------
+git status
+git config --list
+cat .gitignore
+git add --a
+git status
+git commit -m "changed gitignore with env folder"
+git status
+git push
+source env/bin/activate
+pip list
+pip install Flask
+pip install requests
+pip install joblib
+pip install numpy
+pip install scikit-learn
+pip list
+python3 app.py
+pip freeze -> requirements.txt
+ls
+cat requirements.txt
+git status
+git add --a
+git commit -m "generated requirements file"
+git push
+ls
+vim Dockerfile
+-------
+1. Esc
+2. i
+FROM ubuntu:20.04
+MAINTAINER Alexander Utkov
+RUN apt-get update -y
+COPY . /opt/gsom_predictor
+WORKDIR /opt/gsom_predictor
+RUN apt install -y python3-pip
+RUN pip3 install -r requirements.txt
+CMD python3 app.py
+3. Esc
+4. Shift + ж
+5. wq
+-------
+cat Dockerfile
+git status
+git add --a
+git commit -m "added Dockerfile"
+git pull
+git push
+docker build -t utkova/e2e_test:v.0.1 .
+docker images
+docker run --network host -d utkova/e2e_test:v.0.1
+docker ps
+docker stop <name> #to stop docker
+docker run --network host -it utkova/utkova/e2e_test:v.0.1 #interactive_mode
+ls
+ls -a
+exit
+vim .dockerignore
+-------
+1. Esc
+2. i
+.git
+.gitignore
+env
+.idea
+Dockerfile
+3. Esc
+4. Shift + ж
+5. wq
+-------
+git status
+git add --a
+git commit -m "created Dockerignore"
+git pull
+git push
+docker build -t utkova/e2e_test:v.0.2 .
+docker images
+docker login
+docker push utkova/e2e_test:v.0.2
