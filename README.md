@@ -122,14 +122,14 @@ docker images  # Show all Docker images
 ```
 docker run --network host -d utkova/e2e_test:v.0.1 #Names and versions are different for each user
 ```
-18. To check the connetction using Postman
+18. To check the connetction using Postman\
 19.To push Docker image to DockerHub
 ```
 docker push utkova/e2e_test:v.0.1 #Names and versions are different for each user
 ```
 
 <h3> :rocket: Conclusion </h3>
-THe whole process helps to understand how to run your model or your code using virtual environment and machines and show the basis steps which is used by majority of companies aroud the world. 
+THe whole process helps to understand how to run your model or your code using virtual environment and machines and show the basiс steps which is used by majority of companies aroud the world. 
  
 Made by:\
 **Utkov Alexander**
